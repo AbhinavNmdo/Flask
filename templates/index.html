@@ -60,13 +60,17 @@
 
 
     <div class="container">
-        <h2 class="form-text fs-3 text-center my-3">Your TODOS</h2>
+        <h2 class="form-text fs-2 text-center my-3">Your TODOS</h2>
         <div class="row my-3">
+            {% for todo in alltodo %}
             <div class="col-md-4 my-3">
-                <div class="card p-4">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quaerat officiis at culpa facilis fuga harum? Nobis esse ut ducimus, amet facere magni iste ipsum nemo voluptatem commodi laboriosam obcaecati recusandae culpa consequatur autem enim eveniet laborum, reiciendis fugit voluptate labore, consectetur earum aut est. Impedit distinctio iusto autem asperiores.</p>
+                <div class="card p-3" style="min-height: 13rem;">
+                    <h1 class="text-center fs-3 form-text">{{todo.title}}</h1>
+                    <p class="form-text fs-5 mt-4">{{todo.desc}}</p>
+                    <small class="position-absolute bottom-0 end-0 form-text">{{todo.date_created}}</small>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </body>
