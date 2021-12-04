@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    Update
+{% endblock title %}
+{% block body %}
+<div class="w-100 my-4 d-flex flex-column justify-content-center align-items-center" style="min-height: 80vh;">
+    <h2 class="form-text fs-1 mb-3 text-center">TODO</h2>
+    <form action="/update/{{todo.sno}}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Todo Label: </label>
+            <input type="text" value="{{todo.value}}" name="title" class="form-control input" id="title" autocomplete="false">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description: </label>
+            <textarea name="desc" id="desc" value="{{todo.desc}}" class="form-control input" cols="30" rows="0"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+</div>
+{% endblock body %}
